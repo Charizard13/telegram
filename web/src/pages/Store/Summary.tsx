@@ -9,7 +9,6 @@ import { useTonConnectModal } from "@tonconnect/ui-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
-import { Page } from "@/components/Page";
 
 export const Summary = (props: Props) => {
   const { shop } = props;
