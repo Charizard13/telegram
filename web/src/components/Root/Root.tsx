@@ -56,9 +56,7 @@ export const Root: FC = () => {
         twaReturnUrl: "https://t.me/woltshopbot/Start",
       }}
     >
-      <SDKProvider
-        options={{ acceptCustomStyles: true, cssVars: true, complete: true }}
-      >
+      <SDKProvider options={{ acceptCustomStyles: true, cssVars: true }}>
         <DisplayGate error={Err} loading={Loading} initial={Loading}>
           <App />
         </DisplayGate>
