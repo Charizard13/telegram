@@ -33,7 +33,12 @@ export const Root: FC = () => {
   }, []);
 
   return (
-    <TonConnectUIProvider manifestUrl={manifestUrl}>
+    <TonConnectUIProvider
+      manifestUrl={manifestUrl}
+      actionsConfiguration={{
+        twaReturnUrl: "https://t.me/woltshopbot/Start",
+      }}
+    >
       <SDKProvider
         options={{ acceptCustomStyles: true, cssVars: true, complete: true }}
       >
