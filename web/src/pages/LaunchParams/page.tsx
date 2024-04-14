@@ -3,7 +3,7 @@ import type { FC } from "react";
 
 import { DisplayData } from "@/components/DisplayData/DisplayData.tsx";
 import { Link } from "@/components/Link/Link.tsx";
-import { Page } from "@/components/Page/Page.tsx";
+import { Page } from "@/components/Page";
 
 export const LaunchParamsPage: FC = () => {
   const lp = useLaunchParams();

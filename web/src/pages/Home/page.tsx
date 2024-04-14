@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { NavLink } from "react-router-dom";
 import gif from "../../assets/hand.gif";
+import { Page } from "@/components/Page";
 const data = JSON.stringify({
   eventType: "web_app_setup_back_button",
   eventData: {
@@ -22,7 +23,7 @@ export const HomePage: FC = () => {
   const [_, setInputForm] = useState({});
 
   return (
-    <div className="p-4 flex flex-col gap-4" style={{ height: "100dvh" }}>
+    <Page className="flex flex-col gap-4">
       <img src={gif} alt="diamond" className="h-36 w-36 rounded-full mx-auto" />
       <h1 className="text-center text-3xl font-bold">ברוכים הבאים</h1>
       <p className="text-center text-lg leading-tight">
@@ -57,6 +58,6 @@ export const HomePage: FC = () => {
           </NavLink>
         </Button>
       </div>
-    </div>
+    </Page>
   );
 };

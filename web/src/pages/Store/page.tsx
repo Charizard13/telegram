@@ -147,7 +147,7 @@ export const StorePage: FC = () => {
               <img
                 src={gif}
                 alt="diamond"
-                className="text-sm h-24 w-24 rounded-full bg-slate-100"
+                className="text-sm h-24 w-24 rounded-full bg-secondary"
               />
             </div>
             <h1 className="font-bold">

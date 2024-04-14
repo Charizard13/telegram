@@ -8,6 +8,8 @@ import { HandshakeIcon, WalletMinimalIcon } from "lucide-react";
 import { useTonConnectModal } from "@tonconnect/ui-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "react-router-dom";
+import { Page } from "@/components/Page";
 
 export const Summary = (props: Props) => {
   const { shop } = props;
@@ -18,7 +20,7 @@ export const Summary = (props: Props) => {
   const { open } = useTonConnectModal();
 
   return (
-    <div style={{ height: "100vh" }} className="p-4 flex flex-col gap-4">
+    <div className="flex flex-col gap-4 p-4">
       <Card className="flex flex-col gap-4 p-4">
         <CardTitle className="text-3xl">סיכום הזמנה</CardTitle>
         <CardDescription>
@@ -30,7 +32,7 @@ export const Summary = (props: Props) => {
               <img
                 src={gif}
                 alt="diamond"
-                className="h-8 w-8 rounded-full bg-slate-100"
+                className="h-8 w-8 rounded-full bg-secondary"
               />
               <div>x{product.quantity}</div>
               <div>{product.name}</div>
@@ -58,9 +60,11 @@ export const Summary = (props: Props) => {
           <WalletMinimalIcon className="mx-2" height={20} />
           תשלום באמצעות טלגרם
         </Button>
-        <Button variant={"outline"} className="w-full rounded-full">
-          <HandshakeIcon className="mx-2" height={20} />
-          תשלום באמצעות מזומן
+        <Button variant={"outline"} className="w-full rounded-full" asChild>
+          <Link to="/order-summary">
+            <HandshakeIcon className="mx-2" height={20} />
+            תשלום באמצעות מזומן
+          </Link>
         </Button>
       </div>
     </div>
