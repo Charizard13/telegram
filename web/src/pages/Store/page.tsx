@@ -130,10 +130,7 @@ export const StorePage: FC = () => {
   }
 
   return (
-    <div
-      style={{ height: "100vh" }}
-      className="p-4 flex flex-col gap-4  text-center"
-    >
+    <div className="p-4 flex flex-col gap-4 text-center h-[100vh]">
       <div className="grid grid-cols-3 gap-4">
         {products.map((product) => (
           <div key={product.id} className="flex flex-col gap-2 items-center">
@@ -143,7 +140,6 @@ export const StorePage: FC = () => {
                   {shop?.find((item) => item.id === product.id)?.quantity || 0}
                 </Badge>
               )}
-
               <img
                 src={gif}
                 alt="diamond"

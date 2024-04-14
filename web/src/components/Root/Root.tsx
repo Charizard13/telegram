@@ -2,25 +2,42 @@ import { setDebug } from "@tma.js/sdk";
 import { DisplayGate, SDKProvider } from "@tma.js/sdk-react";
 import { TonConnectUIProvider } from "@tonconnect/ui-react";
 import { type FC, useEffect, useMemo } from "react";
-
+import { LoaderIcon } from "lucide-react";
 import { App } from "@/components/App/App.tsx";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardTitle,
+} from "../ui/card";
+import { Button } from "../ui/button";
 
 const Err: FC<{ error: unknown }> = ({ error }) => {
   return (
-    <div>
-      <p>An error occurred while initializing the SDK</p>
-      <blockquote>
-        <code>
-          {error instanceof Error ? error.message : JSON.stringify(error)}
-        </code>
-      </blockquote>
-    </div>
+    <Card className="p-4 flex flex-col items-center justify-center gap-4 m-4">
+      <CardTitle>Error</CardTitle>
+      <CardDescription>
+        An error occurred while initializing the SDK
+      </CardDescription>
+      <CardContent>
+        <blockquote>
+          Error message:{" "}
+          <code>
+            {error instanceof Error ? error.message : JSON.stringify(error)}
+          </code>
+        </blockquote>
+      </CardContent>
+      <CardFooter>
+        <Button onClick={() => window.location.reload()}>Reload</Button>
+      </CardFooter>
+    </Card>
   );
 };
 
-const Loading: FC = () => {
-  return <div>Application is loading</div>;
-};
+const Loading: FC = () => (
+  <LoaderIcon className=" absolute top-1/2 left-1/2 animate-spin" />
+);
 
 export const Root: FC = () => {
   const manifestUrl = useMemo(() => {
