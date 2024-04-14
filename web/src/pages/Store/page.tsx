@@ -114,6 +114,14 @@ export const StorePage: FC = () => {
     return product.price[0].price;
   };
 
+  const getProduct = (product: Product) => {
+    const item = shop.find((item) => item.id === product.id);
+    if (item) {
+      return item.quantity;
+    }
+    return 0;
+  };
+
   if (showSummary) {
     return <Summary shop={shop} />;
   }
@@ -127,7 +135,7 @@ export const StorePage: FC = () => {
         {products.map((product) => (
           <div key={product.id} className="flex flex-col gap-2 items-center">
             <div className="relative">
-              {shop?.find((item) => item.id === product.id)?.quantity > 0 && (
+              {getProduct(product) > 0 && (
                 <Badge className="absolute top-0 right-0 border-none">
                   {shop?.find((item) => item.id === product.id)?.quantity || 0}
                 </Badge>
@@ -142,7 +150,7 @@ export const StorePage: FC = () => {
             <h1 className="font-bold">
               {product.name} - ₪{getProductPrice(product)}
             </h1>
-            {shop?.find((item) => item.id === product.id)?.quantity > 0 ? (
+            {getProduct(product) > 0 ? (
               <div className="flex gap-2">
                 <Button
                   size="icon"
