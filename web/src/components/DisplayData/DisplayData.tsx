@@ -3,8 +3,6 @@ import type { FC, ReactNode } from "react";
 
 import { RGB } from "@/components/RGB/RGB.tsx";
 
-import "./DisplayData.css";
-
 export interface DisplayDataRow {
   title: string;
   value?: RGBType | string | boolean | ReactNode;

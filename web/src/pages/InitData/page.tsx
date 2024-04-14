@@ -9,8 +9,6 @@ import {
 import { Link } from "@/components/Link/Link.tsx";
 import { Page } from "@/components/Page/Page.tsx";
 
-import "./InitDataPage.css";
-
 function getUserRows(user: User): DisplayDataRow[] {
   return [
     { title: "id", value: user.id.toString() },

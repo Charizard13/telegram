@@ -6,8 +6,6 @@ import { DisplayData } from "@/components/DisplayData/DisplayData.tsx";
 import { Link } from "@/components/Link/Link.tsx";
 import { Page } from "@/components/Page/Page.tsx";
 
-import "./TONConnectPage.css";
-
 export const TONConnectPage: FC = () => {
   const wallet = useTonWallet();
   const utils = useUtils();

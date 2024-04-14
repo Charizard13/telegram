@@ -1,10 +1,10 @@
 import type { ComponentType, JSX } from "react";
 
 import { HomePage } from "@/pages/Home/page";
-import { InitDataPage } from "@/pages/InitDataPage/InitDataPage";
-import { LaunchParamsPage } from "@/pages/LaunchParamsPage/LaunchParamsPage.tsx";
-import { ThemeParamsPage } from "@/pages/ThemeParamsPage/ThemeParamsPage.tsx";
-import { TONConnectPage } from "@/pages/TONConnectPage/TONConnectPage";
+import { InitDataPage } from "@/pages/InitData/page";
+import { LaunchParamsPage } from "@/pages/LaunchParams/page";
+import { ThemeParamsPage } from "@/pages/ThemeParams/page";
+import { TONConnectPage } from "@/pages/TONConnect/page";
 import { StorePage } from "@/pages/Store/page";
 import { StatusPage } from "@/pages/Status/page";
 

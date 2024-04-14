@@ -20,6 +20,7 @@ const data = JSON.stringify({
 
 export const HomePage: FC = () => {
   const [_, setInputForm] = useState({});
+
   return (
     <div className="p-4 flex flex-col gap-4" style={{ height: "100dvh" }}>
       <img src={gif} alt="diamond" className="h-36 w-36 rounded-full mx-auto" />
@@ -31,14 +32,14 @@ export const HomePage: FC = () => {
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="item-1">
           <AccordionTrigger>פרטיים אישיים</AccordionTrigger>
-          <AccordionContent className="flex flex-col gap-4">
+          <AccordionContent className="flex flex-col gap-4 p-2">
             <Input type="text" placeholder="הקלידו שם מלא" />
             <Input type="url" placeholder="קישור לרשת החברתית שלכם" />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
           <AccordionTrigger>אימות ויזאולי</AccordionTrigger>
-          <AccordionContent className="flex flex-col gap-4">
+          <AccordionContent className="flex flex-col gap-4 p-2">
             <Label htmlFor="picture">צילום תעודה מזהה</Label>
             <Input type="file" />
             <Label htmlFor="picture">אימות וידאו </Label>

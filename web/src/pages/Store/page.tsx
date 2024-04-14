@@ -4,6 +4,8 @@ import gif from "../../assets/diamond.gif";
 import { PlusIcon, MinusIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Summary } from "./Summary";
+import { BackButton } from "@twa-dev/sdk/react";
+
 export type Product = {
   id: number;
   name: string;
@@ -68,6 +70,7 @@ export type Shop = {
 export const StorePage: FC = () => {
   const [shop, setShop] = useState<Shop>([]);
   const [showSummary, setShowSummary] = useState(false);
+
   const handleAddToCart = (product: Product) => {
     const item = shop.find((item) => item.id === product.id);
     setShop((prevState) => {
@@ -182,6 +185,8 @@ export const StorePage: FC = () => {
           </div>
         ))}
       </div>
+      <BackButton onClick={() => window.history.back()} />
+
       {shop.reduce((acc, item) => acc + item.price * item.quantity, 0) > 0 && (
         <Button
           className=" w-full mt-auto"

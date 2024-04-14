@@ -7,8 +7,8 @@ import { useBackButton } from "@tma.js/sdk-react";
 import { type FC, useMemo } from "react";
 import { Navigate, Route, Router, Routes } from "react-router-dom";
 import { ThemeProvider } from "@/components/themeProvider";
-
-import { routes } from "@/navigation/routes.tsx";
+import { routes } from "@/navigation/routes";
+import { BackButton } from "@/hooks/useBackButton";
 
 export const App: FC = () => {
   const tmaNavigator = useMemo(createNavigator, []);
@@ -16,10 +16,10 @@ export const App: FC = () => {
   const backButton = useBackButton();
 
   useBackButtonIntegration(tmaNavigator, backButton);
-
   return (
     <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
       <Router location={location} navigator={navigator}>
+        <BackButton />
         <Routes>
           {routes.map((route) => (
             <Route key={route.path} {...route} />
