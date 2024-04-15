@@ -21,7 +21,7 @@ export const StatusPage: FC = () => {
         ממתין לאישור
       </Badge>
       <Button className="mt-auto">
-        <Link to="/home">המשך לבינתיים</Link>
+        <Link to="/store">המשך לבינתיים</Link>
       </Button>
     </Page>
   );
